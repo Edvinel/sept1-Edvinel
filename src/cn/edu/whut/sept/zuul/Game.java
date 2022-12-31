@@ -19,7 +19,7 @@ public class Game
     private Room currentRoom;
 
     /**
-     * 创建游戏并初始化内部数据和解析器.
+     * 创建游戏并初始化内部数据和解析器
      */
     public Game()
     {
