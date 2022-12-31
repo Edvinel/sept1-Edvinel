@@ -33,6 +33,7 @@ public class GoAction implements Action{
         }
 
         result.setRoom(currentRoom); // 只改变了room
+        Record.roomList.add(currentRoom);
         return result;
     }
 }

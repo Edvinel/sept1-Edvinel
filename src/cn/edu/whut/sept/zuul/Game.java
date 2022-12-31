@@ -64,7 +64,7 @@ public class Game
         office.addMaterials(new Material("钢笔", "用来写字", 2.0));
 
         currentRoom = outside;  // start game outside
-
+        Record.roomList.add(currentRoom);
     }
 
     /**
@@ -82,6 +82,7 @@ public class Game
             Command command = parser.getCommand(); // 获取指令
             finished = processCommand(command);  // 执行指令
         }
+        System.out.println(Record.roomList);
         System.out.println("Thank you for playing.  Good bye.");
     }
 

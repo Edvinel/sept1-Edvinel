@@ -11,7 +11,7 @@ public class CommandWords
      * 声明有效动作
      */
     private static final String[] validCommands = {
-            "go", "quit", "help", "look"
+            "go", "quit", "help", "look", "back"
     };
 
     public static HashMap<String, Action> actions = null;
@@ -22,6 +22,7 @@ public class CommandWords
         actions.put("quit", new QuitAction());
         actions.put("help", new HelpAction());
         actions.put("look", new LookAction());
+        actions.put("back", new BackAction());
     }
     public CommandWords()
     {

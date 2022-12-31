@@ -276,3 +276,10 @@ private boolean processCommand(Command command)
 3. 创建LookAction类, 实现Action接口的doAction()方法
 4. CommandWords类中注册LookAction类: 成员变量validCommands中添加"look", 成员变量actions中添加"look" - new LookAction()
 5. 详细实现见代码
+
+### 2.在游戏中实现一个“back”命令，玩家输入该命令后会把玩家带回上一个房间:
+1. 写一个记录类: `Record`, 声明一个成员变量` public static List<Room> roomList = new ArrayList<>();`
+2. 在goAction的doAction()方法中, 当前房间每改变一次, 就将当前房间添加到roomList中
+3. 创建BackAction类, 实现Action接口的doAction()方法
+4. CommandWords类中注册BackAction类: 成员变量validCommands中添加"back", 成员变量actions中添加"back" - new BackAction()
+5. 详细实现见代码
