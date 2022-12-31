@@ -268,3 +268,11 @@ private boolean processCommand(Command command)
 2. 在CommandWords类中注册: validCommands成员变量中添加指令名, actions添加指令名-动作类的映射关系
 
 ## 自己补充的功能实现说明
+
+### 1.扩展游戏，使得一个房间里可以存放任意数量的物件，每个物件可以有一个描述和一个重量值，玩家进入一个房间后，可以通过“look”命令查看当前房间的信息以及房间内的所有物品信息:
+
+1. 写一个物品类: `Material`
+2. 为Room类添加容器存放物品对象: `private List<Material> materials; //房间中物品` 
+3. 创建LookAction类, 实现Action接口的doAction()方法
+4. CommandWords类中注册LookAction类: 成员变量validCommands中添加"look", 成员变量actions中添加"look" - new LookAction()
+5. 详细实现见代码
