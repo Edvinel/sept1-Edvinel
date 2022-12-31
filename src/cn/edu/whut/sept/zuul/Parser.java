@@ -7,6 +7,9 @@ public class Parser
     private CommandWords commands;
     private Scanner reader;
 
+    /**
+     * 创建解析器.
+     */
     public Parser()
     {
         commands = new CommandWords();
@@ -21,7 +24,9 @@ public class Parser
 
         System.out.print("> ");
 
-        inputLine = reader.nextLine();
+        inputLine = reader.nextLine();  // 读取用户输入的字符串
+
+        // 将用户输入字符串按空格分隔为word1与word2
 
         Scanner tokenizer = new Scanner(inputLine);
         if(tokenizer.hasNext()) {
@@ -31,6 +36,7 @@ public class Parser
             }
         }
 
+        // 判断用户输入的指令的第一个单词是否是有效动作
         if(commands.isCommand(word1)) {
             return new Command(word1, word2);
         }
