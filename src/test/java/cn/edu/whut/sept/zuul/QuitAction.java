@@ -1,4 +1,4 @@
-package cn.edu.whut.sept.zuul;
+package test.java.cn.edu.whut.sept.zuul;
 
 public class QuitAction implements Action{
 

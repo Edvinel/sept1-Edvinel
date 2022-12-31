@@ -1,7 +1,7 @@
 /**
  * 回退一个房间
  */
-package cn.edu.whut.sept.zuul;
+package main.java.cn.edu.whut.sept.zuul;
 
 import java.util.List;
 

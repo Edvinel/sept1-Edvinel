@@ -1,7 +1,7 @@
 /**
  * 记录走过的房间
  */
-package cn.edu.whut.sept.zuul;
+package test.java.cn.edu.whut.sept.zuul;
 
 import java.util.ArrayList;
 import java.util.List;

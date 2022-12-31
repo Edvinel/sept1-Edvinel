@@ -3,7 +3,7 @@
  *
  * 负责处理用户的输入内容，并将其封装为游戏指令Command
  */
-package cn.edu.whut.sept.zuul;
+package main.java.cn.edu.whut.sept.zuul;
 
 import java.util.Scanner;
 

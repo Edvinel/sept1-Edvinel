@@ -1,7 +1,7 @@
 /**
  * 看房间中有什么物品
  */
-package cn.edu.whut.sept.zuul;
+package test.java.cn.edu.whut.sept.zuul;
 
 public class LookAction implements Action{
     @Override

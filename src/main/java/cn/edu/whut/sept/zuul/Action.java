@@ -2,7 +2,7 @@
  * 动作接口, 用于多态
  */
 
-package cn.edu.whut.sept.zuul;
+package main.java.cn.edu.whut.sept.zuul;
 
 import java.util.HashMap;
 

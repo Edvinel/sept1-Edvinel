@@ -1,7 +1,7 @@
 /**
  * 房间中的物品
  */
-package cn.edu.whut.sept.zuul;
+package test.java.cn.edu.whut.sept.zuul;
 
 public class Material {
     private String name;

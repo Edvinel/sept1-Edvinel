@@ -2,7 +2,7 @@
  * 该类是“World-of-Zuul”应用程序的房间类
  * 负责记录房间的描述与出口
  */
-package cn.edu.whut.sept.zuul;
+package main.java.cn.edu.whut.sept.zuul;
 
 import java.util.ArrayList;
 import java.util.List;

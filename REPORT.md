@@ -42,11 +42,16 @@ class CommandWords
       CommandWords: CommandWords()
       CommandWords: boolean isCommand(String aString)
       CommandWords: void showAll()
+class MagicRoom
+      MagicRoom: List<Room> rooms
+      MagicRoom: MagicRoom(String description, List<Room> rooms)
+      MagicRoom: Room getNextRoomRandom()
 Game --> Parser
 Game --> Room
 Game ..> Command
 Parser --> CommandWords
 Parser ..> Command
+Room <|-- MagicRoom
 ```
 
 
@@ -287,3 +292,59 @@ private boolean processCommand(Command command)
 ### 3.在游戏中增加具有传输功能的房间，每当玩家进入这个房间，就会被随机地传输到另一个房间:
 1. 写一个传送房间类: `MagicRoom`, 继承房间类`Room`
 2. 在Game的processCommand方法中, 每当进入一个新房间, 就校验是否是运行类型是否是MagicRoom, 如果是的, 则将当前房间变为随机一个房间
+
+## 编写测试用例
+
+在项目中利用了Maven包管理工具, 直接在pom.xml文件中添加了Junit4依赖以帮助开展单元测试
+
+maven依赖:
+```
+    <dependencies>
+        <!-- JUnit单元测试框架 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+```
+
+单元测试代码:
+
+```java
+package main.java.cn.edu.whut.sept.zuul;
+
+import org.junit.Test;
+
+public class TestMain {
+    public TestMain() {
+    }
+
+    @Test
+    public void main() {
+        TestGame game = new TestGame();
+        game.testPlay();
+    }
+}
+```
+
+```java
+package test.java.cn.edu.whut.sept.zuul;
+
+
+import main.java.cn.edu.whut.sept.zuul.TestMain;
+import org.junit.runner.JUnitCore;
+import org.junit.runner.Result;
+import org.junit.runner.notification.Failure;
+
+public class TestRunner {
+    public static void main(String[] args) {
+        Result result = JUnitCore.runClasses(TestMain.class);
+        for (Failure failure : result.getFailures()) {
+            System.out.println(failure.toString());
+        }
+        System.out.println("测试结果: " + result.wasSuccessful());
+    }
+}
+```
