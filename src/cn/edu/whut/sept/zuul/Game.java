@@ -13,6 +13,8 @@
  */
 package cn.edu.whut.sept.zuul;
 
+import java.util.ArrayList;
+
 public class Game
 {
     private Parser parser;
@@ -32,7 +34,7 @@ public class Game
      */
     private void createRooms()
     {
-        Room outside, theater, pub, lab, office;
+        Room outside, theater, pub, lab, office, spaceMagic;
 
         // create the rooms
         outside = new Room("outside the main entrance of the university");
@@ -40,10 +42,23 @@ public class Game
         pub = new Room("in the campus pub");
         lab = new Room("in a computing lab");
         office = new Room("in the computing admin office");
+
+        // 传送房间
+        ArrayList<Room> rooms = new ArrayList<>();
+        rooms.add(outside);
+        rooms.add(theater);
+        rooms.add(pub);
+        rooms.add(lab);
+        rooms.add(office);
+        spaceMagic = new MagicRoom("in a magic room, you will be sent to a random space", rooms);
+        spaceMagic.addMaterials(new Material("手机", "在混乱时空中捡到的", 10));
+        spaceMagic.addMaterials(new Material("Mac", "在混乱时空中见到的", 20));
+
         // initialise room exits
         outside.setExit("east", theater);
         outside.setExit("south", lab);
         outside.setExit("west", pub);
+        outside.setExit("north", spaceMagic);
         outside.addMaterials(new Material("口罩", "用来防范疫情", 1.0));
         outside.addMaterials(new Material("学生手册", "记录学校的规章和制度", 3.0));
 
@@ -122,6 +137,18 @@ public class Game
         data.setRoom(currentRoom);
         Params result = action.doAction(data); // 多态 返回更改后的变量(状态)
         currentRoom = result.getRoom(); // 变量更新
+        if (currentRoom instanceof MagicRoom) {
+            try {
+                for (int i = 3; i > 0; i--) {
+                    Thread.sleep(1000);
+                    System.out.println("混乱时空中...还剩" + i + "秒到达一个随机地点\n");
+                }
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            currentRoom = ((MagicRoom) currentRoom).getNextRoomRandom(); // 当前房间切换成一个随机房间
+            Record.roomList.add(currentRoom);
+        }
         wantToQuit = result.isWantToQuit(); // 变量更新
         // else command not recognised.
         return wantToQuit;

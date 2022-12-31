@@ -283,3 +283,7 @@ private boolean processCommand(Command command)
 3. 创建BackAction类, 实现Action接口的doAction()方法
 4. CommandWords类中注册BackAction类: 成员变量validCommands中添加"back", 成员变量actions中添加"back" - new BackAction()
 5. 详细实现见代码
+
+### 3.在游戏中增加具有传输功能的房间，每当玩家进入这个房间，就会被随机地传输到另一个房间:
+1. 写一个传送房间类: `MagicRoom`, 继承房间类`Room`
+2. 在Game的processCommand方法中, 每当进入一个新房间, 就校验是否是运行类型是否是MagicRoom, 如果是的, 则将当前房间变为随机一个房间
