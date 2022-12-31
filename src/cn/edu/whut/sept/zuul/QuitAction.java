@@ -10,6 +10,9 @@ public class QuitAction implements Action{
     public Params doAction(Params params) {
         Params result = new Params();
         Command command = params.getCommand();
+        Room currentRoom = params.getRoom();
+        result.setRoom(currentRoom);
+
         if(command.hasSecondWord()) {
             System.out.println("Quit what?");
             result.setWantToQuit(false);

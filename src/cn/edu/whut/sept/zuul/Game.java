@@ -40,22 +40,31 @@ public class Game
         pub = new Room("in the campus pub");
         lab = new Room("in a computing lab");
         office = new Room("in the computing admin office");
-
         // initialise room exits
         outside.setExit("east", theater);
         outside.setExit("south", lab);
         outside.setExit("west", pub);
+        outside.addMaterials(new Material("口罩", "用来防范疫情", 1.0));
+        outside.addMaterials(new Material("学生手册", "记录学校的规章和制度", 3.0));
 
         theater.setExit("west", outside);
+        theater.addMaterials(new Material("口罩", "学术报告厅好像需要口罩", 1.0));
 
         pub.setExit("east", outside);
+        pub.addMaterials(new Material("香水", "喷一喷香水再进入", 5.0));
+        pub.addMaterials(new Material("墨镜", "带着墨镜进去应该比较酷", 3.0));
 
         lab.setExit("north", outside);
         lab.setExit("east", office);
+        lab.addMaterials(new Material("防护服", "做实验需要穿好防护服", 6.0));
+        lab.addMaterials(new Material("护目镜", "做实验需要戴好护目镜", 3.0));
 
         office.setExit("west", lab);
+        office.addMaterials(new Material("资料", "有大量信息", 1.0));
+        office.addMaterials(new Material("钢笔", "用来写字", 2.0));
 
         currentRoom = outside;  // start game outside
+
     }
 
     /**

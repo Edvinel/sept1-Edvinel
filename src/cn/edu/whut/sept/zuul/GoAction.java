@@ -11,11 +11,12 @@ public class GoAction implements Action{
         Params result = new Params();
         Command command = params.getCommand();
         Room currentRoom = params.getRoom();
+        result.setRoom(currentRoom);
 
         if(!command.hasSecondWord()) {
             // if there is no second word, we don't know where to go...
             System.out.println("Go where?");
-            return null;
+            return result;
         }
 
         String direction = command.getSecondWord();

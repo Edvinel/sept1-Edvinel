@@ -4,6 +4,8 @@
  */
 package cn.edu.whut.sept.zuul;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import java.util.HashMap;
 
@@ -12,6 +14,8 @@ public class Room
     private String description;
     private HashMap<String, Room> exits; //出口
 
+    private List<Material> materials; //房间中物品
+
     /**
      * 创建房间
      */
@@ -19,6 +23,15 @@ public class Room
     {
         this.description = description;
         exits = new HashMap<>();
+        materials = new ArrayList<>();
+    }
+
+    /**
+     * 向房间中添加物品
+     * @param material: 物品
+     */
+    public void addMaterials(Material material) {
+        materials.add(material);
     }
 
     /**
@@ -49,6 +62,13 @@ public class Room
         return "You are " + description + ".\n" + getExitString();
     }
 
+    public String getMaterialsString() {
+        String returnString = "有一些物品, 让我们看看是什么: \n";
+        for (Material material : materials) {
+            returnString += material.toString();
+        }
+        return returnString;
+    }
     /**
      *
      * @return 返回房间的所有出口
