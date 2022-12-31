@@ -3,6 +3,8 @@
  */
 package cn.edu.whut.sept.zuul;
 
+import java.util.HashMap;
+
 public class CommandWords
 {
     /**
@@ -12,8 +14,17 @@ public class CommandWords
             "go", "quit", "help"
     };
 
+    public static HashMap<String, Action> actions = null;
+
+    static {
+        actions = new HashMap<String, Action>();
+        actions.put("go", new GoAction());
+        actions.put("quit", new QuitAction());
+        actions.put("help", new HelpAction());
+    }
     public CommandWords()
     {
+
         // nothing to do at the moment...
     }
 
