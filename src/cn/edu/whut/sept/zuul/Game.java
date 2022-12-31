@@ -98,11 +98,13 @@ public class Game
     {
         boolean wantToQuit = false;
 
+        // 指令中没有有效动作
         if(command.isUnknown()) {
             System.out.println("I don't know what you mean...");
             return false;
         }
 
+        //指令中含有有效动作
         String commandWord = command.getCommandWord();
         if (commandWord.equals("help")) {
             printHelp();

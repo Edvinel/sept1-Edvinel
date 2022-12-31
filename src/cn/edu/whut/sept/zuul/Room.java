@@ -1,3 +1,7 @@
+/**
+ * 该类是“World-of-Zuul”应用程序的房间类
+ * 负责记录房间的描述与出口
+ */
 package cn.edu.whut.sept.zuul;
 
 import java.util.Set;
@@ -27,16 +31,28 @@ public class Room
         exits.put(direction, neighbor);
     }
 
+    /**
+     *
+     * @return 返回房间的简短描述
+     */
     public String getShortDescription()
     {
         return description;
     }
 
+    /**
+     *
+     * @return 返回房间的完整描述
+     */
     public String getLongDescription()
     {
         return "You are " + description + ".\n" + getExitString();
     }
 
+    /**
+     *
+     * @return 返回房间的所有出口
+     */
     private String getExitString()
     {
         String returnString = "Exits:";
@@ -47,6 +63,11 @@ public class Room
         return returnString;
     }
 
+    /**
+     *
+     * @param direction 当前房间的direction方向
+     * @return 当前房间的direction方向的另外一间房间
+     */
     public Room getExit(String direction)
     {
         return exits.get(direction);
