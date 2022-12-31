@@ -1,4 +1,18 @@
 # 软件工程实训任务一：代码规范与标注
+    ```mermaid
+          graph LR
+          start[开始] --> input[输入A,B,C]
+          input --> conditionA{A是否大于B}
+          conditionA -- YES --> conditionC{A是否大于C}
+          conditionA -- NO --> conditionB{B是否大于C}
+          conditionC -- YES --> printA[输出A]
+          conditionC -- NO --> printC[输出C]
+          conditionB -- YES --> printB[输出B]
+          conditionB -- NO --> printC[输出C]
+          printA --> stop[结束]
+          printC --> stop
+          printB --> stop
+    ```
 
 ## 任务目的
 * 理解软件代码规范的重要性
