@@ -147,6 +147,7 @@ public class Game
                 throw new RuntimeException(e);
             }
             currentRoom = ((MagicRoom) currentRoom).getNextRoomRandom(); // 当前房间切换成一个随机房间
+            System.out.println(currentRoom.getLongDescription());
             Record.roomList.add(currentRoom);
         }
         wantToQuit = result.isWantToQuit(); // 变量更新
