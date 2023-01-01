@@ -15,7 +15,7 @@ package main.java.cn.edu.whut.sept.zuul;
 
 import java.util.ArrayList;
 
-public class TestGame
+public class Game
 {
     private Parser parser;
     private Room currentRoom;
@@ -23,7 +23,7 @@ public class TestGame
     /**
      * 创建游戏并初始化内部数据和解析器
      */
-    public TestGame()
+    public Game()
     {
         createRooms();
         parser = new Parser();
