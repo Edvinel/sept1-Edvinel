@@ -1,7 +1,7 @@
 /**
  * 该类是“World-of-Zuul”应用程序的预设指令, 其中包含了所有有效指令。
  */
-package main.java.cn.edu.whut.sept.zuul;
+package cn.edu.whut.sept.zuul;
 
 import java.util.HashMap;
 

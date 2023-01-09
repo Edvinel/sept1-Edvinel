@@ -1,4 +1,4 @@
-package main.java.cn.edu.whut.sept.zuul;
+package cn.edu.whut.sept.zuul;
 
 import java.util.ArrayList;
 import java.util.List;

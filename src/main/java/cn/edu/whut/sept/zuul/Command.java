@@ -2,7 +2,7 @@
  * 该类是“World-of-Zuul”应用程序的指令类
  * 负责记录用户输入的指令
  */
-package main.java.cn.edu.whut.sept.zuul;
+package cn.edu.whut.sept.zuul;
 
 public class Command
 {

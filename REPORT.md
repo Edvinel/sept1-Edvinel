@@ -63,7 +63,7 @@ Room <|-- MagicRoom
 
 ### 我的改进:
 
-"Replace Conditional with Polymorphism": 利用多态来消除多重分支,并使得命令的处理更加模块化
+"Replace Conditional with Polymorphism": 利用多态来消除多重分支,并使得命令的处理更加模块化.
 
 首先设计一个接口:
 ```java

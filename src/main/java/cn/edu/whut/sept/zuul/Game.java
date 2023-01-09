@@ -11,7 +11,7 @@
  * @author  Michael Kölling and David J. Barnes
  * @version 1.0
  */
-package main.java.cn.edu.whut.sept.zuul;
+package cn.edu.whut.sept.zuul;
 
 import java.util.ArrayList;
 
