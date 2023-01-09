@@ -1,3 +1,0 @@
-luping1.mp4 filter=lfs diff=lfs merge=lfs -text
-luping2.mp4 filter=lfs diff=lfs merge=lfs -text
-luping3.mp4 filter=lfs diff=lfs merge=lfs -text
